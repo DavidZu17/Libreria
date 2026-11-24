@@ -2,9 +2,10 @@ package com.Libreria.Libreria.insfrastructure.persistence;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import lombok.*;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
 @Entity
 @Table ( name = "books" )
@@ -15,8 +16,9 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 public class BookEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
     private Integer anoPublicacion;
     private String autor;
