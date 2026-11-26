@@ -17,6 +17,7 @@ public class BookService implements CreateBookUseCase , ListBookUseCase {
 
     @Override
     public Book createBook(Book book) {
+
         return bookRepositoryPort.save(book);
     }
 
